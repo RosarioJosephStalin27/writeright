@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+
+  <!-- link your existing styles -->
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+   <header class="app-header">
+    WriteRight
+  </header>
+  <div class="login-card">
+    <h2>Login</h2>
+
+    <form id="loginForm">
+      <label>Username:
+        <input type="text" id="username" required />
+      </label>
+
+      <label>Password:
+        <input type="password" id="password" required />
+      </label>
+
+      <button type="submit">Login</button>
+      <!-- no error message needed; any credentials are accepted -->
+    </form>
+  </div>
+
+  <script>
+    // accept any credentials
+    document.getElementById("loginForm").addEventListener("submit", e => {
+      e.preventDefault();                 // prevent reload
+      // you could optionally grab the inputs here if you need them
+      localStorage.setItem("loggedIn", "true");
+      window.location.href = "index.html"; // go to main page
+    });
+  </script>
+</body>
+</html>
